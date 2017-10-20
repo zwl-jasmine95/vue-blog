@@ -28,10 +28,15 @@ module.exports = {
   dev: {
     env: require('./dev.env'),
     port: process.env.PORT || 8080,
+    host:'http://172.16.0.105',
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api':{
+        target:'http://101.81.18.134:7088'
+      }
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

@@ -7,7 +7,14 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
-
+import axios from 'axios'
+axios.get('/api/articles/page?code=apply_article_document&size=10&page=1')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 export default {
   name: 'app',
   components: {
